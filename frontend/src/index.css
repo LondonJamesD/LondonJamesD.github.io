@@ -1,0 +1,13 @@
+:root{
+  --bg: #0f172a;
+  --card: #0b1220;
+  --accent: #60a5fa;
+  --muted: #9aa4b2;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#071024,#0b1220);color:#e6eef8;min-height:100vh}
+.app{display:flex;align-items:center;justify-content:center;padding:48px}
+.hero{max-width:760px;text-align:center}
+.hero h1{font-size:2.25rem;margin-bottom:8px}
+.tag{color:var(--muted);margin-bottom:20px}
+.box{background:var(--card);padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);box-shadow:0 6px 20px rgba(2,6,23,0.6)}
