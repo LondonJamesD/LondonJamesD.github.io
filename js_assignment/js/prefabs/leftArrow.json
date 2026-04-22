@@ -1,0 +1,16 @@
+{
+    "id":"leftArrow",
+    "special":"yes",
+    "states":[
+        {
+            "stateID":"normal",
+            "stuck":"no",
+            "imgPath":"leftArrow.png",
+            "children":[]
+        }
+    ],
+    "clickAction":"goToLevel",
+    "nextLevel":"level3.json",
+    "delay":1000,
+    "ignoreState":"yes"
+}

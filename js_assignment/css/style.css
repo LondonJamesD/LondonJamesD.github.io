@@ -1,0 +1,345 @@
+:root {
+    --base-colour: #000000;
+    --text-colour: #caffb9;
+    --primary-colour: #66a182;
+    --secondary-colour: #e1aa7D;
+    --colour-1: #be8a60;
+    --colour-2: #4f5f7d;
+
+    --gradColour1: #2b65d2;
+    --gradColour2: #9710bc;
+
+    --gradColour3: #2b65d2;
+    --gradColour4: #9710bc;
+    --bg_gradient1: #201c1fc5;
+    --bg_gradient2: #3a1c1ca9;
+    --border: #9710bc;
+    --borderRadius: 16px;
+    --shakeIntensity: 0.2;
+
+    --vp-height: 80vh;
+    --game-width: min(100vw, var(--vp-height) * (9 / 16));
+
+    --btn-text: #ffffff;
+
+    --btn-1-base: #4CAF50;
+    --btn-1-shadow: #4CAF5088;
+    --btn-1-shadow-hover: #4CAF50;
+
+    --btn-2-base: #2196F3;
+    --btn-2-shadow: #2196F388;
+    --btn-2-shadow-hover: #2196F3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    image-rendering: pixelated;
+    user-select: none;           
+    -webkit-user-select: none;   
+    -moz-user-select: none;     
+    -ms-user-select: none;      
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--base-colour);
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+/* --- PROGRESS BAR STYLING --- */
+progress {
+    appearance: none;
+    -webkit-appearance: none;
+    width: var(--game-width);
+    height: 3vh;
+    border: 4px solid #3e342f;
+    border-bottom: none;
+    background-color: #111;
+    image-rendering: pixelated;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #111;
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--primary-colour);
+}
+
+progress::-moz-progress-bar {
+    background-color: var(--primary-colour);
+}
+
+#viewport {
+    position: relative;
+    container-type: size;
+    aspect-ratio: 9 / 16;
+    width: var(--game-width);
+    background-size: 100% 100%;
+    background-position: center;
+    overflow: hidden;
+    border-left: 4px solid #3e342f;
+    border-right: 4px solid #3e342f;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+#viewport.fading {
+    opacity: 0;
+}
+
+.viewport-box {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* --- CUTSCENE STYLING --- */
+.cutscene-text-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: center;
+    font-size: 2rem;
+    color: var(--text-colour);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+}
+
+.shaky-text {
+    display: inline-block;
+    animation: shake 0.4s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(calc(1px * var(--shakeIntensity)), calc(1px * var(--shakeIntensity))) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(calc(-1px * var(--shakeIntensity)), calc(-2px * var(--shakeIntensity))) rotate(calc(-1deg * var(--shakeIntensity)));
+    }
+
+    20% {
+        transform: translate(calc(-3px * var(--shakeIntensity)), 0px) rotate(calc(1deg * var(--shakeIntensity)));
+    }
+
+    30% {
+        transform: translate(calc(3px * var(--shakeIntensity)), calc(2px * var(--shakeIntensity))) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(calc(1px * var(--shakeIntensity)), calc(-1px * var(--shakeIntensity))) rotate(calc(1deg * var(--shakeIntensity)));
+    }
+
+    50% {
+        transform: translate(calc(-1px * var(--shakeIntensity)), calc(2px * var(--shakeIntensity))) rotate(calc(-1deg * var(--shakeIntensity)));
+    }
+
+    60% {
+        transform: translate(calc(-3px * var(--shakeIntensity)), calc(1px * var(--shakeIntensity))) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(calc(3px * var(--shakeIntensity)), calc(1px * var(--shakeIntensity))) rotate(calc(-1deg * var(--shakeIntensity)));
+    }
+
+    80% {
+        transform: translate(calc(-1px * var(--shakeIntensity)), calc(-1px * var(--shakeIntensity))) rotate(calc(1deg * var(--shakeIntensity)));
+    }
+
+    90% {
+        transform: translate(calc(1px * var(--shakeIntensity)), calc(2px * var(--shakeIntensity))) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(calc(1px * var(--shakeIntensity)), calc(-2px * var(--shakeIntensity))) rotate(calc(-1deg * var(--shakeIntensity)));
+    }
+}
+
+/* --- INVENTORY STYLING --- */
+.inventory {
+    width: var(--game-width);
+    height: 15vh;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    background-color: #1a1a1a;
+    border: 4px solid #3e342f;
+    border-top: 4px solid #111;
+    box-sizing: border-box;
+    image-rendering: pixelated;
+}
+
+.inventory-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border: 2px dashed #444;
+    cursor: grab;
+    /* Tells the browser this item can be picked up */
+    transition: scale 0.15s ease, filter 0.15s ease;
+}
+
+/* Triggers when the mouse hovers over an item in the inventory */
+.inventory-icon:hover {
+    scale: 1.1;
+    filter: brightness(1.2) drop-shadow(0 0 5px var(--primary-colour));
+}
+
+/* Triggers when the user clicks and holds down on the inventory item */
+.inventory-icon:active {
+    cursor: grabbing;
+    /* The hand visually closes */
+    scale: 0.95;
+    filter: brightness(0.9);
+}
+
+/* --- GAME OBJECT STYLING --- */
+.gameObject {
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    transition: rotate 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        scale 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        filter 0.1s ease;
+}
+
+.gameObject:hover {
+    rotate: 0.25deg;
+    scale: 1.01;
+    filter: brightness(1.05) contrast(1.1) drop-shadow(0 0 2px var(--primary-colour));
+}
+
+.gameObject:active {
+    scale: 1;
+    filter: brightness(0.8);
+}
+
+.cutscene-next-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    font-family: inherit;
+    background-color: var(--primary-colour);
+    color: var(--base-colour);
+    border: 4px solid var(--text-colour);
+    cursor: pointer;
+    z-index: 10;
+    image-rendering: pixelated;
+    transition: scale 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        filter 0.1s ease;
+}
+
+.cutscene-next-button:hover {
+    scale: 1.05;
+    filter: brightness(1.2) drop-shadow(0 0 5px var(--primary-colour));
+}
+
+.cutscene-next-button:active {
+    scale: 0.95;
+    filter: brightness(0.8);
+}
+
+#examine-tooltip {
+    color: var(--text-colour);
+    text-shadow: 2px 2px 0 #000;
+    font-family: inherit;
+    text-align: center;
+    max-width: 250px;
+
+    z-index: 1000;
+    pointer-events: none;
+
+    animation: floatUpFade 0.3s ease-out forwards;
+}
+
+@keyframes floatUpFade {
+    0% {
+        opacity: 0;
+        margin-top: 10px;
+    }
+
+    100% {
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+
+.game-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 15px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display:block;
+    z-index: 9998;
+    color: var(--btn-text);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Start Button Specifics */
+.start-btn {
+    transform: translate(-50%, -110%) scale(0.95);
+    background-color: var(--btn-1-base);
+    box-shadow: 0 0 15px var(--btn-1-shadow);
+}
+
+.start-btn:hover {
+    transform: translate(-50%, -110%) scale(0.95);
+    box-shadow: 0 0 25px var(--btn-1-shadow-hover);
+}
+
+.new-game-btn {
+    transform: translate(-50%, 10%) scale(0.95);
+    background-color: var(--btn-2-base);
+    box-shadow: 0 0 15px var(--btn-2-shadow);
+}
+
+.new-game-btn:hover {
+    transform: translate(-50%, 10%) scale(0.95);
+    box-shadow: 0 0 25px var(--btn-2-shadow-hover);
+}
+/* Add this to your main CSS file */
+
+.custom-cutscene-btn {
+    background-color: #2e4057;  
+    color: #66a182; 
+    border: 2px solid #66a182;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    
+    pointer-events: auto; 
+    position: relative;
+    z-index: 1000;
+}
+
+.custom-cutscene-btn:hover {
+    background-color: #66a182;
+    color: #2e4057;
+    transform: scale(1.05);
+}
+
+.custom-cutscene-btn:active {
+    transform: scale(0.95);
+}

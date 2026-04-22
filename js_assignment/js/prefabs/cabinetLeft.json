@@ -1,0 +1,25 @@
+{
+    "id":"cabinetL",
+    "special":"no",
+    "states":[
+        {
+            "stateID":"cabinetClosed",
+            "imgPath":"cabinet.png",
+            "children":[
+            ],
+            "examine":"noExamine"
+        },
+        {
+            "stateID":"cabinetOpen",
+            "imgPath":"cabinetOpen.png",
+            "children":[
+            ],
+            "sound":"drawer.wav",
+            "playOnChange":true,
+            "looping":false,
+            "examine":"Its empty."
+        }
+    ],
+    "clickAction":"rotateState",
+    "nextLevel":""
+}

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>The Daily News</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Breaking News Ticker -->
+        <div class="ticker-wrap">
+            <div class="ticker-label">Breaking</div>
+            <div class="ticker-track">
+                <div class="ticker-inner" aria-label="Breaking news ticker">
+                    <span>Ontario man's van surpasses 1 million kilometres</span>
+                    <span>Jets fall 4–1 to red-hot Tampa Bay Lightning</span>
+                    <span>Lindsey Vonn airlifted after crash at Crans-Montana</span>
+                    <span>Scientists use AI to decode what chickens are saying</span>
+                    <span>The quarter-pounder turns 50 — its origin story is unexpected</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span>Ontario man's van surpasses 1 million kilometres</span>
+                    <span>Jets fall 4–1 to red-hot Tampa Bay Lightning</span>
+                    <span>Lindsey Vonn airlifted after crash at Crans-Montana</span>
+                    <span>Scientists use AI to decode what chickens are saying</span>
+                    <span>The quarter-pounder turns 50 — its origin story is unexpected</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <header>
+            <button class="cornerButton" aria-label="Open menu">
+                <div class="hamburger-icon" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+                <span>Menu</span>
+            </button>
+            <a href="https://example.com/">Headlines</a>
+            <a href="https://example.com/" class="mobileHidden">Politics</a>
+            <a href="https://example.com/">Sports</a>
+            <a href="https://example.com/" class="mobileHidden">Business</a>
+            <a href="https://example.com/">Local</a>
+            <a href="https://example.com/" class="mobileHidden">Arts</a>
+            <a href="https://example.com/">Weather</a>
+        </header>
+
+        <!-- Masthead -->
+        <div class="titleSection">
+            <button class="cornerButton desktopHidden" aria-label="Open menu">
+                <div class="hamburger-icon" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                </div>
+                <span>Menu</span>
+            </button>
+            <h1 class="title">The Daily News</h1>
+        </div>
+
+        <div class="masthead-meta">
+            <span id="masthead-date"></span>
+            <span class="edition">Morning Edition</span>
+            <span>Vol. CXLII &nbsp;·&nbsp; No. 49,302</span>
+        </div>
+
+        <!-- Articles Grid -->
+        <div class="articles">
+
+            <!-- Left Column — Large Features -->
+            <div class="largeSection">
+
+                <section class="headline">
+                    <div class="section-label">Local</div>
+                    <div class="imageCard">
+                        <a href="https://www.ctvnews.ca/toronto/consumer-alert/article/heres-how-this-ontario-mans-van-reached-1-million-kilometres/" aria-label="Read article about Betsy the van">
+                            <img src="images/headline1.avif" alt="Marko Intihar's 2000 Toyota Sienna van, known as Betsy, reaching 1 million kilometres">
+                        </a>
+                    </div>
+                    <h2>
+                        <a href="https://www.ctvnews.ca/toronto/consumer-alert/article/heres-how-this-ontario-mans-van-reached-1-million-kilometres/">
+                            'Let's hear it for Betsy': Here's how this Ontario man's van hit 1 million kilometres
+                        </a>
+                    </h2>
+                    <p>Buying a new vehicle can be expensive, so often, drivers will do what they can to make their car last as long as it can. One Ontario man says his van no longer owes him anything, after it surpassed one million kilometres. Marko Intihar, of Claremont, Ont. owns a 2000 Toyota Sienna — affectionately known as 'Betsy.'</p>
+                    <span class="read-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        4 min read
+                    </span>
+                </section>
+
+                <section class="headline">
+                    <div class="section-label">Sports</div>
+                    <div class="imageCard">
+                        <a href="https://www.cbc.ca/news/canada/manitoba/winnipeg-jets-tampa-bay-lightning-nhl-hockey-9.7067695" aria-label="Read Jets vs Lightning article">
+                            <img src="images/headline2.avif" alt="Winnipeg Jets vs Tampa Bay Lightning game action">
+                        </a>
+                    </div>
+                    <h2>
+                        <a href="https://www.cbc.ca/news/canada/manitoba/winnipeg-jets-tampa-bay-lightning-nhl-hockey-9.7067695">
+                            Jets lose 4–1 to red-hot Lightning
+                        </a>
+                    </h2>
+                    <p>Darren Raddysh and Yanni Gourde each had a goal and two assists to lead the Tampa Bay Lightning to a 4–1 victory over the Winnipeg Jets on Thursday night. Nikita Kucherov scored his 27th goal on an empty-netter and added his 55th assist.</p>
+                    <span class="read-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        3 min read
+                    </span>
+                </section>
+
+            </div>
+
+            <!-- Right Column — Small Features -->
+            <div class="smallSection">
+
+                <section class="headline">
+                    <div class="section-label">Sports</div>
+                    <div class="imageCard">
+                        <a href="https://www.cbc.ca/sports/olympics/winter/alpine-skiing/lindsey-vonn-injured-alpine-skiing-crans-montana-9.7067806" aria-label="Read Lindsey Vonn article">
+                            <img src="images/headline3.avif" alt="Lindsey Vonn on the alpine ski course at Crans-Montana">
+                        </a>
+                    </div>
+                    <h2>
+                        <a href="https://www.cbc.ca/sports/olympics/winter/alpine-skiing/lindsey-vonn-injured-alpine-skiing-crans-montana-9.7067806">
+                            Lindsey Vonn airlifted from course after crash
+                        </a>
+                    </h2>
+                    <p>Vonn crashed in her final downhill race before the Winter Olympics — a troubling turn just a week before the Milan Cortina Games.</p>
+                    <span class="read-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        2 min read
+                    </span>
+                </section>
+
+                <section class="headline">
+                    <div class="section-label">Food</div>
+                    <div class="imageCard">
+                        <a href="https://www.cbc.ca/life/food/kashmiri-chai-maryam-jillani-pakistan-cookbook-9.7040000" aria-label="Read Kashmiri chai article">
+                            <img src="images/headline4.avif" alt="A cup of vibrant pink Kashmiri chai tea">
+                        </a>
+                    </div>
+                    <h2>
+                        <a href="https://www.cbc.ca/life/food/kashmiri-chai-maryam-jillani-pakistan-cookbook-9.7040000">
+                            How to make Kashmiri chai — and the secret to that pink hue
+                        </a>
+                    </h2>
+                    <p>You know it's winter when it's Kashmiri chai season — a wedding staple known for its stunning pink colour.</p>
+                    <span class="read-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        5 min read
+                    </span>
+                </section>
+
+                <section class="headline">
+                    <div class="section-label">Health</div>
+                    <div class="imageCard">
+                        <a href="https://www.cbc.ca/documentaries/the-passionate-eye/these-two-canadian-farmers-used-roundup-on-their-crops-for-decades-then-they-were-diagnosed-with-cancer-1.6584108" aria-label="Read Canadian farmers article">
+                            <img src="images/headline5.avif" alt="Canadian farmers Garry Gadd and Richard Elenko in a field">
+                        </a>
+                    </div>
+                    <h2>
+                        <a href="https://www.cbc.ca/documentaries/the-passionate-eye/these-two-canadian-farmers-used-roundup-on-their-crops-for-decades-then-they-were-diagnosed-with-cancer-1.6584108">
+                            These farmers used Roundup for decades. Then they were diagnosed with cancer
+                        </a>
+                    </h2>
+                    <p>Garry Gadd and Richard Elenko know that in farming, volume is everything — but at what cost?</p>
+                    <span class="read-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        6 min read
+                    </span>
+                </section>
+
+                <section class="headline mobileHidden">
+                    <div class="section-label">Arts</div>
+                    <div class="imageCard">
+                        <a href="https://www.cbc.ca/music/songs-that-were-only-famous-in-canada-1.7466599" aria-label="Read Famous in Canada article">
+                            <img src="images/headline6.avif" alt="Vinyl records representing songs that were only famous in Canada">
+                        </a>
+                    </div>
+                    <h2>
+                        <a href="https://www.cbc.ca/music/songs-that-were-only-famous-in-canada-1.7466599">
+                            Famous in Canada: hit songs that only we will remember
+                        </a>
+                    </h2>
+                    <p>An uncanny experience every Canadian has lived: mentioning a 'famous' song to friends abroad — only to realize no one else knows it.</p>
+                    <span class="read-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        7 min read
+                    </span>
+                </section>
+
+                <section class="headline mobileHidden">
+                    <div class="section-label">Science</div>
+                    <div class="imageCard">
+                        <a href="https://www.cbc.ca/documentaries/the-nature-of-things/what-the-cluck-was-that-scientists-turn-to-ai-to-decode-what-chickens-are-saying-9.7065417" aria-label="Read AI and chickens article">
+                            <img src="images/headline7.avif" alt="Chickens on a farm in Nova Scotia used in AI communication research">
+                        </a>
+                    </div>
+                    <h2>
+                        <a href="https://www.cbc.ca/documentaries/the-nature-of-things/what-the-cluck-was-that-scientists-turn-to-ai-to-decode-what-chickens-are-saying-9.7065417">
+                            What the cluck? Scientists use AI to decode chicken communication
+                        </a>
+                    </h2>
+                    <p>In Nova Scotia, a livestock scientist is recording every squawk and cluck — and AI is beginning to translate.</p>
+                    <span class="read-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        4 min read
+                    </span>
+                </section>
+
+                <section class="headline mobileHidden">
+                    <div class="section-label">Business</div>
+                    <div class="imageCard">
+                        <a href="https://www.cbc.ca/radio/undertheinfluence/how-failing-at-fractions-saved-the-quarter-pounder-1.5979468" aria-label="Read Quarter Pounder article">
+                            <img src="images/headline8.avif" alt="A classic McDonald's Quarter Pounder burger">
+                        </a>
+                    </div>
+                    <h2>
+                        <a href="https://www.cbc.ca/radio/undertheinfluence/how-failing-at-fractions-saved-the-quarter-pounder-1.5979468">
+                            How failing at fractions saved the Quarter Pounder
+                        </a>
+                    </h2>
+                    <p>The Quarter Pounder was created by a franchisee named Al Bernadin in 1971 — and it almost didn't survive its first year.</p>
+                    <span class="read-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        5 min read
+                    </span>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-brand">
+                <div class="footer-brand-title">The Daily News</div>
+                <p>Trusted journalism since 1882. Independent, rigorous, and dedicated to the stories that matter most to Canadians.</p>
+                <p class="footer-copyright">© 2026 The Daily News. All rights reserved.</p>
+            </div>
+
+            <div class="column">
+                <span class="column-title">Subscribe</span>
+                <a href="https://example.com/">Digital Access</a>
+                <a href="https://example.com/">Home Delivery</a>
+                <a href="https://example.com/">Gift Subscriptions</a>
+                <a href="https://example.com/">Student Rate</a>
+            </div>
+            <div class="column">
+                <span class="column-title">Account</span>
+                <a href="https://example.com/">Login</a>
+                <a href="https://example.com/">Manage</a>
+                <a href="https://example.com/">Delivery</a>
+                <a href="https://example.com/">Newsletters</a>
+            </div>
+            <div class="column">
+                <span class="column-title">Contact</span>
+                <a href="https://example.com/">Tip Hotline</a>
+                <a href="https://example.com/">Help & FAQs</a>
+                <a href="https://example.com/">Advertising</a>
+                <a href="https://example.com/">Careers</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        // Live date in masthead
+        const el = document.getElementById('masthead-date');
+        if (el) {
+            el.textContent = new Date().toLocaleDateString('en-CA', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            });
+        }
+    </script>
+</body>
+</html>

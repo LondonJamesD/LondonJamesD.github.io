@@ -1,0 +1,14 @@
+{
+    "id":"screwDriver",
+    "special":"no",
+    "states":[
+        {
+            "stateID":"screwdriver",
+            "imgPath":"screwDriver.png",
+            "children":[]
+        }
+    ],
+    "clickAction":"take",
+    "examine":"Its an old screwdriver",
+    "inventoryImage":"screwDriver.png"
+}

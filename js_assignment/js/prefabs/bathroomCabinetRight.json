@@ -1,0 +1,25 @@
+{
+    "id":"bathroomCabinetR",
+    "special":"no",
+    "states":[
+        {
+            "stateID":"cabinetClosed",
+            "imgPath":"bathroomCabinet.png",
+            "children":[
+            ],
+            "examine":"noExamine"
+        },
+        {
+            "stateID":"cabinetOpen",
+            "imgPath":"bathroomCabinet_Open.png",
+            "children":[
+            ],
+            "sound":"drawer.wav",
+            "playOnChange":true,
+            "looping":false,
+            "examine":"Its empty."
+        }
+    ],
+    "clickAction":"rotateState",
+    "nextLevel":""
+}

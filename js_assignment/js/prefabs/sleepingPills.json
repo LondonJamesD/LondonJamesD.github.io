@@ -1,0 +1,14 @@
+{
+    "id":"sleepingPills",
+    "special":"no",
+    "states":[
+        {
+            "stateID":"normal",
+            "imgPath":"sleepingPills.png",
+            "children":[]
+        }
+    ],
+    "clickAction":"take",
+    "examine":"Its sleeping pills",
+    "inventoryImage":"sleepingPills.png"
+}
