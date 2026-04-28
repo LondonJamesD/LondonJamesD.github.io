@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #aa3bff;
+  --color-accent-bg: rgba(170, 59, 255, 0.1);
+  --font-serif: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', serif;
+}
+
+:root {
+  --text: #ffffff;
+  --text-h: #ffffff;
+  --bg-dark: rgba(10, 10, 12, 0.85);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  @apply antialiased text-[var(--text)];
+  margin: 0;
+  background-color: #050507;
+  font-family: var(--font-serif);
+}
+
+.background-wallpaper {
+  background-image: url('/images/wallpaperham.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px) brightness(0.25);
+  transform: scale(1.05);
+}
+
+.glass {
+  @apply bg-[var(--bg-dark)] backdrop-blur-lg border border-[var(--border)] shadow-2xl;
+}
+
+.gradient-text {
+  @apply text-white font-medium;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+* {
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold tracking-tight;
+}
+
+p, span, div, a {
+  @apply font-normal;
+}

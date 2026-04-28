@@ -1,0 +1,15 @@
+{
+    "id":"wallet",
+    "special":"yes",
+    "states":[
+        {
+            "stateID":"wallet",
+            "imgPath":"Wallet.png",
+            "children":[]
+        }
+    ],
+    "clickAction":["take", "setFlag(hasWallet)", "playCutscene(strangeWallet.json)", "addProgress"],
+    "cutscene":"strangeWallet.json",
+    "nextLevel":"carLevel.json",
+    "inventoryImage":"Wallet.png"
+}

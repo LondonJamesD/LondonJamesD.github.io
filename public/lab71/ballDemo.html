@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!--
+Example Canvas Animation with a Ball class
+Sam Scott, McMaster, 2024
+-->
+<html>
+
+<head>
+    <title>Example Canvas Animation</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script>
+        class Ball {
+            constructor(x, y, xSpeed, ySpeed, c) {
+                this.x = x;
+                this.y = y;
+                this.xSpeed = xSpeed;
+                this.ySpeed = ySpeed;
+                this.red = 255;
+                this.green = 0;
+                this.blue = 0;
+                this.radius = 5;
+                this.c = c;
+            }
+
+            setColor(red, green, blue) {
+                this.red = red;
+                this.green = green;
+                this.blue = blue;
+            }
+            
+            moveOneStep() {
+                if (this.x >= this.c.width - this.radius 
+                || this.x <= 0 + this.radius 
+                || this.y >= this.c.height - this.radius 
+                || this.y <= 0 + this.radius){
+                    this.xSpeed=-this.xSpeed;
+                    this.ySpeed=-this.ySpeed;
+                }                    
+                this.x += this.xSpeed;
+                this.y += this.ySpeed;
+            }
+
+            draw(ctx) {
+                ctx.fillStyle = "rgb(" + this.red + "," + this.green + "," + this.blue + ")";
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+
+        // Following best practices, it's all inside a window load event
+        window.addEventListener("load", function (event) {
+            // global variables (global to this function, that is)
+            // to control the animation
+            const b = document.getElementById("toggle");
+            const c = document.getElementById("animationCanvas");
+            const ctx = c.getContext("2d");
+            let balls = [];
+            for(let i = 0; i < 500; i++){
+                let x = Math.random()*c.width;
+                let y = Math.random()*c.height/2;
+                let xSpeed = Math.random()*2-1;
+                let ySpeed = Math.random()*2 -1;
+                let ball = new Ball(x,y, xSpeed, ySpeed, c);
+                
+                let r,g,b;
+                r = Math.random()*255+1;
+                g = Math.random()*255+1;
+                b = Math.random()*255+1;
+                ball.setColor(r,g,b);
+                balls.push(ball);
+            }
+            
+            let timerId;            // holds the id of the timer
+
+
+
+            // starts the animation
+            function startAnimation() {
+                // 16  milliseconds works out to 62.5 frames per second.
+                // for games, 60 frames per second is standard
+                timerId = setInterval(updateAnimation, 16);
+                console.log("Animation Started")
+            }
+
+            // stops the animation
+            function stopAnimation() {
+                clearInterval(timerId);
+                console.log("Animation Stopped")
+            }
+
+            // This function is called every 16 milliseconds
+            function updateAnimation() {
+                // 1. Update the position of the ball
+                balls.forEach(element => {
+                    element.moveOneStep();
+                })
+
+                // 2. Clear the canvas
+                if(b.checked){
+                    ctx.clearRect(0, 0, c.width, c.height);
+                }
+                
+
+                // 3. Draw the frame using information stored in ball
+                balls.forEach(element => {
+                    element.draw(ctx);
+                })
+            }
+
+            // Start things up!
+            startAnimation();
+        });
+    </script>
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body style='text-align:center;'>
+    <canvas id='animationCanvas' width='768' height='400' style='background-color:black;'></canvas>
+    <input id="toggle"type="checkbox">Disable Trails</input>
+</body>
+
+</html>

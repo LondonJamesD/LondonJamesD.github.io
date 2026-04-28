@@ -1,0 +1,29 @@
+{
+    "music": "art/music/helpScene.mp3",
+    "slides": [
+        {
+            "text": "I am here to solve a homicide",
+            "backdrop": "art/backgrounds/murder.png"
+        },
+        {
+            "text":"Three months ago, my neighbour went missing.",
+            "backdrop": "art/backgrounds/missing.png"
+        },
+        {
+            "text":"Last week, his door was left open. I saw it from across the hall. Every night I'd peek, still open.",
+            "backdrop": "art/backgrounds/doorAjar.png"
+        },
+        {
+            "text":"Nobody bought the place, he still gets mail.",
+            "backdrop": "art/backgrounds/doorAjar.png"
+        },
+        {
+            "text":"Something is seriously wrong",
+            "backdrop": "art/backgrounds/creepy.png"
+        },
+        {
+            "text":"I need to go in.",
+            "backdrop": "art/backgrounds/creepy.png"
+        }
+    ]
+}

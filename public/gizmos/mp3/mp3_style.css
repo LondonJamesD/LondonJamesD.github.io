@@ -1,0 +1,227 @@
+body {
+    margin: 0;
+    height: 100vh;
+    /* Soft, natural background inspired by the room image */
+    background: radial-gradient(circle at center, #e8dcc4 0%, #c4ad8d 100%);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Classic iOS font stack */
+    overflow: hidden;
+}
+
+#mp3-player {
+    position: absolute;
+    top: 1%; 
+    left: 50%;
+    
+    transform: translateX(-50%) scale(0.9); 
+    transform-origin: top center; /* Ensures it shrinks toward the top middle */
+    
+    width: 240px;
+    height: 300px;
+    
+    background: linear-gradient(135deg, #d4a373 0%, #bc8a5f 40%, #a37145 100%);
+    border-radius: 24px;
+    border: 2px solid #6b4423;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 20px;
+    box-sizing: border-box;
+    cursor: grab;
+    --light-x: 50%;
+    --light-y: 50%;
+}
+
+#mp3-player:active {
+    cursor: grabbing;
+}
+
+#mp3-player::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 22px;
+    background: radial-gradient(circle at var(--light-x) var(--light-y), rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%);
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    z-index: 10;
+}
+
+.screen-container {
+    width: 100%;
+    height: 200px;
+    background: #0a0a0a;
+    border-radius: 8px;
+    box-shadow: 
+        inset 0px 6px 12px rgba(0,0,0,1),
+        0px 2px 2px rgba(255,255,255,0.3);
+    border: 2px solid #3a2210;
+    padding: 6px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+/* The actual LCD */
+.screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #1e2b22, #3a5240); /* Natural green/grey LCD */
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #e0f2e6;
+    text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.8);
+    font-size: 13px;
+    font-weight: bold;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0px 2px 5px rgba(0,0,0,0.6);
+}
+
+.glass-gloss {
+    position: absolute;
+    top: 6px; left: 6px; right: 6px;
+    height: 45%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%);
+    border-radius: 4px 4px 100% 100% / 4px 4px 15px 15px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+#cover-art {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    z-index: 0;
+    mix-blend-mode: luminosity;
+}
+
+.screen-content {
+    z-index: 1;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.track-info {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: 0.5px;
+}
+
+.time-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress-wrapper {
+    width: 100%;
+    margin-top: 25px;
+    z-index: 2;
+}
+
+input[type=range] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #1a1a1a;
+    border-radius: 4px;
+    box-shadow: 
+        inset 0 2px 4px rgba(0,0,0,0.9), 
+        0 1px 1px rgba(255,255,255,0.3);
+    border: 1px solid #4a2f1d;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    /* Glossy iOS thumb */
+    background: linear-gradient(to bottom, #fdfdfd 0%, #dcdcdc 50%, #b8b8b8 51%, #e6e6e6 100%);
+    box-shadow: 
+        0 2px 4px rgba(0,0,0,0.6),
+        inset 0 1px 1px rgba(255,255,255,0.8);
+    border: 1px solid #666;
+    margin-top: -6px;
+}
+
+/* Controls Pad - Recessed Wood Base */
+.controls-pad {
+    margin-top: 35px;
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(135deg, #a37145 0%, #bc8a5f 100%);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 
+        inset 0px 4px 8px rgba(0,0,0,0.5),
+        0px 2px 3px rgba(255,255,255,0.4);
+    border: 1px solid #543318;
+    z-index: 2;
+}
+
+/* Buttons - iOS 4 Glossy Wood/Plastic */
+.btn {
+    position: absolute;
+    border: 1px solid #543318;
+    cursor: pointer;
+    color: #3e2723;
+    text-shadow: 0px 1px 1px rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: none; /* Instant response for skeuomorphism */
+}
+
+/* Standard outer buttons */
+#btn-prev, #btn-next {
+    width: 40px; height: 30px;
+    border-radius: 6px;
+    background: linear-gradient(to bottom, #e3c5a6 0%, #d4a373 49%, #bc8a5f 50%, #a37145 100%);
+    box-shadow: 
+        inset 0 1px 1px rgba(255,255,255,0.6),
+        0 2px 4px rgba(0,0,0,0.4);
+    font-size: 14px;
+}
+
+#btn-prev:active, #btn-next:active {
+    background: linear-gradient(to bottom, #a37145 0%, #bc8a5f 50%, #d4a373 51%, #e3c5a6 100%);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+}
+
+#btn-prev { top: 50%; left: 12px; transform: translateY(-50%); }
+#btn-next { top: 50%; right: 12px; transform: translateY(-50%); }
+
+/* Center Play Button - Prominent */
+#btn-play {
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #f0e2d3 0%, #e3c5a6 49%, #d4a373 50%, #bc8a5f 100%);
+    box-shadow: 
+        inset 0 2px 3px rgba(255,255,255,0.7),
+        0 4px 8px rgba(0,0,0,0.5);
+    font-size: 22px;
+}
+
+#btn-play:active {
+    background: linear-gradient(to bottom, #bc8a5f 0%, #d4a373 50%, #e3c5a6 51%, #f0e2d3 100%);
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.6);
+}

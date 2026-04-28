@@ -1,0 +1,28 @@
+{
+    "backdrop": "art/backgrounds/vendingMachineZoom.png",
+    "loop": true,
+    "objects": [
+        {
+            "file": "vendGlass.json",
+            "x": 0,
+            "y": -11,
+            "z": 17,
+            "scale": 142
+        },
+        {
+            "file": "cola.json",
+            "x": -32,
+            "y": -40,
+            "z": 7,
+            "scale": 20
+        },
+        {
+            "file":"leftArrow.json",
+            "x":-35,
+            "y":-25,
+            "z":100,
+            "scale":20,
+            "overrideAction":"goToLevel(motelExterior.json)"
+        }
+    ]
+}

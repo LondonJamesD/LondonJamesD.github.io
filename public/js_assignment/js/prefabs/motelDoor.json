@@ -1,0 +1,13 @@
+{
+    "id":"motelDoor",
+    "special":"yes",
+    "states":[
+        {
+            "stateID":"motelDoor",
+            "stuck":"no",
+            "imgPath":"door.png",
+            "children":[]
+        }
+    ],
+    "ignoreState":"yes"
+}

@@ -1,0 +1,25 @@
+{
+    "id":"sink",
+    "special":"no",
+    "states":[
+        {
+            "stateID":"sinkClosed",
+            "imgPath":"sink.png",
+            "children":[
+            ],
+            "examine":"noExamine"
+        },
+        {
+            "stateID":"sinkOpen",
+            "imgPath":"sink_open.png",
+            "children":[
+            ],
+            "sound":"drawer.wav",
+            "playOnChange":true,
+            "looping":false,
+            "examine":"Its empty."
+        }
+    ],
+    "clickAction":"rotateState",
+    "nextLevel":""
+}
