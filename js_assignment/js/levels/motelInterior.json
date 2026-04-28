@@ -1,0 +1,36 @@
+{
+    "backdrop": "art/backgrounds/motelInterior.png",
+    "loop": true,
+    "objects": [
+        {
+            "file": "clerk.json",
+            "x": -19,
+            "y": -4.5,
+            "z": 10,
+            "scale": 60
+        },
+        {
+            "file": "key.json",
+            "x": 23,
+            "y": -32,
+            "z": 10,
+            "scale": 10
+        },
+        {
+            "file":"leftArrow.json",
+            "x":-35,
+            "y":-25,
+            "z":100,
+            "scale":20,
+            "overrideAction":"goToLevel(motelExterior.json)"
+        },
+        {
+            "file":"rightArrow.json",
+            "x":35,
+            "y":-25,
+            "z":100,
+            "scale":20,
+            "overrideAction":"goToLevel(bathroomLevel.json)"
+        }
+    ]
+}

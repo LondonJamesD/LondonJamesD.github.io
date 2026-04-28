@@ -1,0 +1,13 @@
+{
+    "backdrop":"art/backgrounds/backdrop2.gif",
+    "music":"art/music/rain.mp3",
+    "loop":true,
+    "objects":[
+        {
+            "file":"switch.json",
+            "x":"35",
+            "y":"25",
+            "scale":"30"
+        }
+    ]
+}

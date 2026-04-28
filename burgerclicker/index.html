@@ -1,0 +1,50 @@
+<!--
+Authors: Ryan Teeninga and London Dummer
+Date Created: 2/11/2026
+Purpose: Handle HTML for the burger clicker game
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="module" src="js/script.js"></script>
+    <title>Burger Clicker Game</title>
+</head>
+ 
+<body>
+    <img id="hand" src="images/art/spatula1.webp">
+    <div id="main">
+        <div class="separator">
+            <div id="scoreboard">
+                <h1 id="count">Burgers Made: 0</h1>
+                <h3 id="totalCount">Playthrough Total: 0</h1>
+            </div>
+            <div id="clickArea">
+                <img id="clickable" src="images/burger.png">
+                <p id="cps">Clicks per second: 0</p>
+                <p id="clickValue">Burgers per click: 1</p>
+            </div>
+            <input class="buyButton" id="helpButton" type="button" value="Help" enabled>
+            <div id="helpSection"></div>
+        </div>
+
+        <div class="separator">
+            <div id="trophyArea" class="separator">
+
+            </div>
+            <div id="upgradeArea" class="separator">
+                <div class="upgrade">
+                    <h3>Upgrade Name</h3>
+                    <p>Cost: 50 Burgers</p>
+                    <input class="buyButton" type="button" value="Buy Now" disabled>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

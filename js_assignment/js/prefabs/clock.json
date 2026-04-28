@@ -1,0 +1,22 @@
+{
+    "id":"clock",
+    "special":"no",
+    "states":[
+        {
+            "stateID":"clock",
+            "imgPath":"AlarmClock.png",
+            "children":[],
+            "examine":"This clock is just as obnoxious as mine."    
+        },
+        {
+            "stateID":"clockRinging",
+            "imgPath":"AlarmRinging.gif",
+            "sound":"alarm.wav",
+            "looping":true,
+            "examine":"noExamine"
+            
+        }
+    ],
+    "clickAction":"rotateState",
+    "cutscene":""
+}

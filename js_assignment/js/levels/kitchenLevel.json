@@ -1,0 +1,38 @@
+{
+    "backdrop":"art/backgrounds/Kitchen.gif",
+    "music":"art/music/apartmentAmbience.mp3",
+    "loop":true,
+    "objects":[
+        {
+            "file":"cabinetLeft.json",
+            "x":-40,
+            "y":8,
+            "scale":80
+        },
+        {
+            "file":"cabinetRight.json",
+            "x":"40",
+            "y":"8",
+            "z":100,
+            "scale":80
+        },
+        {
+            "file":"leftArrow.json",
+            "x":-35,
+            "y":-25,
+            "z":100,
+            "scale":20,
+            "overrideAction":[
+            "conditional(!hasWallet, justExamine, I should look around before I go)"
+            ,"conditional(hasWallet, goToLevel, carLevel.json)"]
+        },
+        {
+            "file":"rightArrow.json",
+            "x":35,
+            "y":-25,
+            "z":100,
+            "scale":20,
+            "overrideAction":"goToLevel(walletLevel.json)"
+        }
+    ]
+}

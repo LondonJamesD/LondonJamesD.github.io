@@ -1,0 +1,28 @@
+{
+    "id": "cabinetR",
+    "special": "no",
+    "states": [
+        {
+            "stateID": "cabinetClosed",
+            "imgPath": "cabinet.png",
+            "children": []
+        },
+        {
+            "stateID": "cabinetOpen",
+            "imgPath": "cabinetOpen.png",
+            "children": [
+                {
+                    "file": "screwDriver.json",
+                    "x": 1,
+                    "y": -10,
+                    "scale": 15
+                }
+            ],
+            "sound":"drawer.wav",
+            "playOnChange":true,
+            "looping":false
+        }
+    ],
+    "clickAction": "rotateState",
+    "nextLevel": ""
+}

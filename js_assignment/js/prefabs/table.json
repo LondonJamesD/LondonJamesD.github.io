@@ -1,0 +1,53 @@
+{
+    "id": "table",
+    "special": "no",
+    "examine":"The table is screwed shut.",
+    "states": [
+        {
+            "stateID": "tableClosed",
+            "imgPath": "lockedTable.png",
+            "children": [
+                {
+                    "file": "clock.json",
+                    "x": -3,
+                    "y": -6,
+                    "scale": 25
+                }
+            ],
+            "stuck": "yes"
+        },
+        {
+            "stateID": "tableOpen",
+            "imgPath": "Table_Open.png",
+            "children": [
+                {
+                    "file": "clock.json",
+                    "x": -3,
+                    "y": -6,
+                    "z":10,
+                    "scale": 25
+                },
+                {
+                    "file": "wallet.json",
+                    "x": "2",
+                    "y": "-2",
+                    "z":10,
+                    "scale": "17"
+                }
+            ],
+            "stuck":"yes",
+            "sound":"unlockTable.mp3",
+            "examine":"noExamine",
+            "playOnChange":true,
+            "looping":false
+        }
+    ],
+    "clickAction": "rotateState",
+    "nextLevel": "",
+    "itemInteractions": {
+        "screwDriver": {
+            "action": "forceState(1, noExamine)",
+            "consumeItem": false
+        }
+    }
+}

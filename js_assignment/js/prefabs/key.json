@@ -1,0 +1,18 @@
+{
+    "id": "key",
+    "special": "yes",
+    "states": [
+        {
+            "stateID": "key",
+            "imgPath": "key.png",
+            "children": []
+        }
+    ],
+    "clickAction": [
+        "conditional(!clerkAsleep, justExamine, He wont let me take it while hes awake)",
+        "conditional(clerkAsleep, setBestTime)",
+        "conditional(clerkAsleep, playCutscene, keyScene.json)",
+        "conditional(clerkAsleep, addProgress)"
+    ],
+    "inventoryImage": "key.png"
+}

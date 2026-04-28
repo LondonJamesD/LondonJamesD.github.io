@@ -1,0 +1,13 @@
+{
+    "id":"cola",
+    "special":"yes",
+    "states":[
+        {
+            "stateID":"cola",
+            "imgPath":"cola.png",
+            "children":[]
+        }
+    ],
+    "clickAction":["take", "setFlag(hasCola)"],
+    "inventoryImage":"cola.png"
+}

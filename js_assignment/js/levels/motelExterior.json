@@ -1,0 +1,29 @@
+{
+    "backdrop": "art/backgrounds/truBluExterior.png",
+    "music": "art/music/apartmentAmbience.mp3",
+    "loop": true,
+    "objects": [
+        {
+            "file": "vendingMachine.json",
+            "x": -15,
+            "y": 10,
+            "scale": 40,
+            "overrideAction": "goToLevel(vendingMachineLevel.json)"
+        },
+        {
+            "file": "motelDoor.json",
+            "x": 19,
+            "y": 12,
+            "z": 10,
+            "scale": 35,
+            "overrideAction": "goToLevel(motelInterior.json)"
+        },
+        {
+            "file": "hammer.json",
+            "x": -36,
+            "y": 26,
+            "z": 10,
+            "scale": 15
+        }
+    ]
+}
