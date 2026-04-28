@@ -18,10 +18,10 @@ const Work = () => {
   const { isPhysicsActive, togglePhysics } = usePhysicsify();
 
   const cardColors = useMemo(() => {
-    return projects.map(() => {
+    return projects.map((_, index) => {
       const hues = [260, 280, 240, 220]; 
-      const randomHue = hues[Math.floor(Math.random() * hues.length)];
-      return `hsl(${randomHue}, 40%, 15%)`;
+      const hue = hues[index % hues.length];
+      return `hsl(${hue}, 40%, 15%)`;
     });
   }, []);
 

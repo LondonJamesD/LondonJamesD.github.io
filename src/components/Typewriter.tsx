@@ -24,7 +24,7 @@ const Typewriter = ({ text, delay = 0, speed = 50, className = '', onComplete }:
 
     let currentIndex = 0;
     let currentText = '';
-    let isDeleting = false;
+    const isDeleting = false;
     let mistakeChar = '';
 
     const type = () => {
