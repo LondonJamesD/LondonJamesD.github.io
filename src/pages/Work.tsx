@@ -68,7 +68,8 @@ const Work = () => {
               </div>
             ) : (
               <div className="p-8 flex flex-col h-full">
-                <div className="flex-grow space-y-3">
+              <div className="
+              space-y-3">
                    <h3 className="text-xl font-bold tracking-tight opacity-95">{project.title}</h3>
                    <p className="text-base opacity-70 leading-snug font-medium">{project.description}</p>
                 </div>
