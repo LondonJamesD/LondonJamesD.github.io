@@ -27,33 +27,34 @@ const Work = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-6 py-12">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-        <div className="space-y-1 text-left">
-          <h1 className="text-5xl font-bold tracking-tight">Experiments</h1>
-          <p className="text-lg opacity-70 font-medium">Web, game, and system prototypes.</p>
+      <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+        <div className="space-y-2 text-left">
+          <h1 className="text-6xl font-black tracking-tighter text-white">Experiments</h1>
+          <p className="text-xl opacity-80 font-bold">Web, game, and system prototypes.</p>
         </div>
         <button 
           onClick={() => togglePhysics('.square-card')}
-          className="px-8 py-3 glass rounded-lg font-semibold hover:bg-white/10 active:scale-95 transition-all z-50 border-white/10"
+          className="px-10 py-4 glass rounded-2xl font-black tracking-widest uppercase text-xs hover:bg-white/10 active:scale-95 transition-all z-50 border-white/20 text-white"
         >
           {isPhysicsActive ? 'Reset' : 'Start physics'}
         </button>
       </div>
       
       {/* Expanded grid gap for physics space */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 min-h-[1200px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 min-h-[1200px]">
         {projects.map((project, index) => (
           <div 
             key={index} 
-            className="square-card glass rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:border-white/20"
+            className="square-card glass rounded-[2rem] overflow-hidden flex flex-col group transition-all duration-500 hover:border-white/40 hover:shadow-purple-500/10 hover:shadow-2xl"
             style={{ 
-              backgroundColor: project.isIframe ? 'rgba(10,10,12,0.95)' : cardColors[index],
-              minHeight: '340px'
+              backgroundColor: project.isIframe ? 'rgba(0,0,0,0.95)' : cardColors[index],
+              minHeight: '380px',
+              borderWidth: '2px'
             }}
           >
             {project.isIframe ? (
               <div className="h-full flex flex-col">
-                <div className="flex-grow bg-black/60 overflow-hidden relative flex items-center justify-center">
+                <div className="flex-grow bg-black/80 overflow-hidden relative flex items-center justify-center">
                    <iframe 
                       src={project.link} 
                       className="w-full h-full border-none absolute inset-0" 
@@ -62,26 +63,26 @@ const Work = () => {
                     />
                    {!isPhysicsActive && <div className="absolute inset-0 z-10 pointer-events-none" />}
                 </div>
-                <div className="p-4 border-t border-white/10">
-                  <h3 className="text-sm font-semibold opacity-80 tracking-wide">{project.title}</h3>
+                <div className="p-6 border-t border-white/10">
+                  <h3 className="text-sm font-black opacity-90 tracking-[0.2em] uppercase">{project.title}</h3>
                 </div>
               </div>
             ) : (
-              <div className="p-8 flex flex-col h-full">
+              <div className="p-10 flex flex-col h-full">
               <div className="
-              space-y-3">
-                   <h3 className="text-xl font-bold tracking-tight opacity-95">{project.title}</h3>
-                   <p className="text-base opacity-70 leading-snug font-medium">{project.description}</p>
+              space-y-4">
+                   <h3 className="text-2xl font-black tracking-tight text-white">{project.title}</h3>
+                   <p className="text-lg opacity-80 leading-relaxed font-bold">{project.description}</p>
                 </div>
-                <div className="mt-6">
+                <div className="mt-auto pt-8">
                   <a 
                     href={project.link} 
                     target={project.link.startsWith('http') ? "_blank" : "_self"}
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 font-semibold text-sm opacity-70 hover:opacity-100 transition-opacity tracking-wide"
+                    className="inline-flex items-center gap-3 font-black text-xs uppercase tracking-[0.3em] opacity-60 hover:opacity-100 hover:text-purple-400 transition-all"
                   >
                     View project
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                   </a>
                 </div>
               </div>
