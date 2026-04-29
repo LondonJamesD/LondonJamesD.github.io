@@ -1,6 +1,6 @@
 import { usePhysicsify } from '../hooks/usePhysicsify';
 import { useMemo } from 'react';
-
+import Typewriter from '../components/Typewriter';
 const projects = [
   { title: 'The Daily News', link: '/layout/index.html', description: 'A clean and responsive news layout.' },
   { title: 'LJ Games', link: 'https://assetstore.unity.com/publishers/82732', description: 'My Unity Asset Store page with 800+ downloads.' },
@@ -29,7 +29,9 @@ const Work = () => {
     <div className="max-w-7xl mx-auto px-6 py-12">
       <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
         <div className="space-y-2 text-left">
-          <h1 className="text-6xl font-black tracking-tighter text-white">Experiments</h1>
+          <h1 className="text-6xl font-black tracking-tighter text-white">
+              <Typewriter text="Experiments" speed={50} delay={2000} />
+          </h1>
           <p className="text-xl opacity-80 font-bold">Web, game, and system prototypes.</p>
         </div>
         <button 

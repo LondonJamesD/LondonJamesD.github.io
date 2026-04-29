@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Work from './pages/Work';
 import InteractiveBackground from './components/InteractiveBackground';
+import ExperienceInfo from './components/ExperienceInfo';
 
 function App() {
   const [activeSection, setActiveSection] = useState('about');
@@ -48,10 +49,12 @@ function App() {
           <section id="about" className="section-entrance pt-32 pb-20">
             <Home />
           </section>
-
           {/* Work Section */}
           <section id="work" className="section-entrance py-20 border-t border-white/5">
             <Work />
+          </section>
+          <section id="work" className="section-entrance py-20 border-t border-white/5">
+            <ExperienceInfo />
           </section>
         </main>
 
